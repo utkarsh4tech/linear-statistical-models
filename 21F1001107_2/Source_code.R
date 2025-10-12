@@ -17,35 +17,35 @@ pop_mean <- 10
 pop_variance <- 16
 pop_sd <- sqrt(pop_variance)
 
-data_list <- vector("list", n_simulations)
+X_i <- vector("list", n_simulations)
 
 for (i in 1:n_simulations) {
-    data_list[[i]] <- rnorm(n_values, mean = pop_mean, sd = pop_sd)
+    X_i[[i]] <- rnorm(n_values, mean = pop_mean, sd = pop_sd)
 }
 
-print(data_list)
+print(X_i)
 
 # W2Q1b
 "
 Calculate the means of each Xi(i = 1, 2, . . . , 100) and
 store it in a new vector ‘Mi’.
 "
-M <- sapply(data_list, mean)
-print(M)
+M_i <- sapply(X_i, mean)
+print(M_i)
 
 # W2Q1c
 "
 Plot the histogram of ‘M = {Mi: 1 ≤ i ≤ 100}’ using the command hist() in
 R-software. What should the distribution of M be?
 "
-hist(M,
+hist(M_i,
     main = "Histogram of Sample Means (M)",
     xlab = "Sample Mean",
     col = "lightblue",
     border = "black",
     probability = TRUE
 )
-lines(density(M), col = "red", lwd = 2) # Add a density curve
+lines(density(M_i), col = "red", lwd = 2) # Add a density curve
 
 # According to the Central Limit Theorem (CLT), the distribution of sample means
 # (M) should be approximately Normal. Since the underlying population is Normal,
@@ -59,7 +59,7 @@ lines(density(M), col = "red", lwd = 2) # Add a density curve
 Calculate the sample variance S_i^2
 of each Xi(i = 1, 2, . . . , 100).
 "
-S_sq <- sapply(data_list, var)
+S_sq <- sapply(X_i, var)
 print(S_sq)
 
 # W2Q1e
@@ -91,8 +91,8 @@ for each i = 1, 2, . . . , 100.
 "
 
 S <- sqrt(S_sq)
-T_stat <- (M - pop_mean) / (S / sqrt(n_values))
-print(T_stat)
+T_i <- (M_i - pop_mean) / (S / sqrt(n_values))
+print(T_i)
 
 # W2W1g
 
@@ -101,7 +101,7 @@ Plot the histogram of ‘T = {Ti: i = 1, 2, 3, . . . , 100}’
 using the command hist() in R-software.
 What should the distribution of T be?
 "
-hist(T_stat,
+hist(T_i,
     main = "Histogram of the T-Statistic",
     xlab = "T-statistic Value",
     col = "salmon",
