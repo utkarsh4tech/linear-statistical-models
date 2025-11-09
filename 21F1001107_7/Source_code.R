@@ -30,11 +30,6 @@ ggplot(df, aes(x = Temp, y = Pressure)) +
         color = "blue",
         alpha = 0.5
     ) +
-    geom_smooth(
-        method = "lm",
-        se = FALSE,
-        color = "red"
-    ) +
     labs(
         title = "Boiling Point (°F) vs. Atmospheric Pressure (Inches Hg)",
         x = "Boiling Point (Temp)",
@@ -42,8 +37,14 @@ ggplot(df, aes(x = Temp, y = Pressure)) +
     ) +
     theme_minimal()
 
-ans_w7q1b <- "Temperature and Pressure have a Linear Relationship
-with +ve correlation as visible from the scatterplot with the trendline."
+ans_w7q1b <- "
+    The scatter plot shows a strong, positive,
+    and non-linear relationship between Temp and Pressure.
+    As the boiling point (Temp) increases,
+    the atmospheric pressure (Pressure) also increases.
+    The relationship appears to be curvilinear (perhaps exponential);
+    the pressure increases at an accelerating rate as the temperature rises.
+"
 
 # W7Q1c
 
