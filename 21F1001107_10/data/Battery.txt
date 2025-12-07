@@ -1,0 +1,17 @@
+trt	lifetime
+BrandA	110
+BrandA	113
+BrandA	108
+BrandA	115
+BrandB	118
+BrandB	116
+BrandB	112
+BrandB	117
+BrandC	108
+BrandC	107
+BrandC	112
+BrandC	108
+BrandD	117
+BrandD	112
+BrandD	115
+BrandD	119
